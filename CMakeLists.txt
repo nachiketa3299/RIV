@@ -11,8 +11,9 @@ SET(riv_sources
 	Vec2.cc
 	Vec3.cc
 )
+
 LIST(TRANSFORM riv_sources PREPEND ${riv_source_dir}/)
 
 # 빌드 타겟 설정 (이름: RVI (프로젝트 이름과 동일))
-ADD_EXECUTABLE(${PROEJCT_NAME} main.cc ${riv_sources})
-TARGET_INCLUDE_DIRECTORIES(${PROJECT_NAME} ${PROJECT_SOURCE_DIR})
+ADD_EXECUTABLE(riv_sim main.cc ${riv_sources})
+TARGET_INCLUDE_DIRECTORIES(riv_sim PRIVATE ${PROJECT_SOURCE_DIR})

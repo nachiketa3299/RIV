@@ -1,19 +1,23 @@
 #pragma once
-namespace rvi {
+
+#include <string>
+
+namespace rvi 
+{
 
 struct Vec2
 {
 	Vec2();
 	Vec2(double x, double y);
 
-	void operator=(const Vec2& o);
+	Vec2& operator=(const Vec2& o);
 
 	Vec2 operator-() const;
 	Vec2 operator+(const Vec2& o) const;
 	Vec2 operator-(const Vec2& o) const;
 	friend Vec2 operator*(double c, const Vec2& v);
 	friend Vec2 operator*(const Vec2& v, double c);
-	void operator/(double c);
+	Vec2 operator/(double c) const;
 
 	Vec2& operator+=(const Vec2& o);
 	Vec2& operator-=(const Vec2& o);
@@ -29,11 +33,14 @@ struct Vec2
 
 	double dot(const Vec2& o) const;
 	Vec2 cross(const Vec2& o) const;
-	Vec2 normalize() const;
+	Vec2 normalized_unsafe() const;
+	Vec2 normalized(double tol) const;
 
 	Vec2& Normalize_Unsafe();
-	Vec2& Normalize();
-	void Clear();
+	Vec2& Normalize(double tol);
+	Vec2& Clear();
+
+	std::string to_string() const;
 
 	double x;
 	double y;
