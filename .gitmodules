@@ -1,0 +1,3 @@
+[submodule "freeglut"]
+	path = external/freeglut
+	url = https://github.com/freeglut/freeglut.git
