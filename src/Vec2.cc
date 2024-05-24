@@ -98,7 +98,7 @@ Vec2 Vec2::normalized_unsafe() const
 {
 	return operator/(length());
 }
-Vec2 Vec2::normalized(double tol=0.000001f) const
+Vec2 Vec2::normalized(double tol) const
 {
 	auto l = length();
 	return l < tol ? Vec2() : operator/(l);
@@ -110,7 +110,7 @@ Vec2& Vec2::Normalize_Unsafe()
 	y /= l;
 	return *this;
 }
-Vec2& Vec2::Normalize(double tol = 0.000001f)
+Vec2& Vec2::Normalize(double tol)
 {
 	auto l = length();
 

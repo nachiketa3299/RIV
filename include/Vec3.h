@@ -34,10 +34,10 @@ struct Vec3
 	double dot(const Vec3& o) const;
 	Vec3 cross(const Vec3& o) const;
 	Vec3 normalized_unsafe() const;
-	Vec3 normalized(double tol) const;
+	Vec3 normalized(double tol=0.000001f) const;
 
 	Vec3& Normalize_Unsafe();
-	Vec3& Normalize(double tol);
+	Vec3& Normalize(double tol=0.000001f);
 	Vec3& Clear();
 
 	std::string to_string() const;

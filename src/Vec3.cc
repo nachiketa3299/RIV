@@ -108,7 +108,7 @@ Vec3 Vec3::normalized_unsafe() const
 {
 	return operator/(length());
 }
-Vec3 Vec3::normalized(double tol=0.000001f) const
+Vec3 Vec3::normalized(double tol) const
 {
 	auto l = length();
 	return l < tol ? Vec3() : operator/(l);
@@ -121,7 +121,7 @@ Vec3& Vec3::Normalize_Unsafe()
 	z /= l;
 	return *this;
 }
-Vec3& Vec3::Normalize(double tol = 0.000001f)
+Vec3& Vec3::Normalize(double tol)
 {
 	auto l = length();
 
